@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="lib/timepicker/jquery.timepicker.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="lib/timepicker/jquery.timepicker.min.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="controls" id="controlPanel">
+        <p class="title">Enter zipcodes separated by commas</p>
+        <textarea id="txtData" placeholder="e.g. 92122,92037,11101"></textarea>
+        <div class="button" id="btnDo">Draw Zipcodes</div>
+    </div>
+    <div class="controls" id="dateTimePicker">
+        <p class="title">Pick a date and a time to do the prediction</p>
+        <div class="form-input"><input id="date-picker" type="text" placeholder="Pick a date" /></div>
+        <div class="form-input"><input id="time-picker" type="text" placeholder="Pick a time" /></div>
+    </div>
+    <div class="controls" id="progLoader">
+        <img class="loader" src="images/loader.gif"/>
+    </div>
+</body>
+
+<!-- Import our zip plotting library -->
+<script src="lib/zipPlotter.js"></script>
+
+<!-- application script -->
+<script src="index.js"></script>
+
+<script id="autofillText">
+    $(document).ready(function() {
+        var a = [];
+        for (var i=10001; i<=11451; i++) {
+            a.push(i);
+        }
+        var mock = a.toString();
+        var txt = document.getElementById("txtData");
+        txt.value = mock;
+
+        $('#date-picker').datepicker({
+            minDate: new Date(2016, 11, 16),
+            maxDate: new Date(2016, 11, 22)
+        });
+
+        $('#time-picker').timepicker({
+            timeFormat: 'H',
+            show2400: true,
+            minTime: '0',
+            maxTime: '23',
+            step: 60
+        });
+    });
+</script>
+
+</html>
