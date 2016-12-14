@@ -1,4 +1,4 @@
-# google_map_zipcode
+# Analysis of NYC Taxi data
 ## How to run
 #### Install all the dependencies
 ```
