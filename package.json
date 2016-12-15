@@ -1,5 +1,5 @@
 {
-  "name": "google_map_zipcode",
+  "name": "nyc_taxi_analysis",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
