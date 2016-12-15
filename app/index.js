@@ -65,11 +65,11 @@
 		var htmlTemplate =
 			"<div class='info-window'>" +
 			"<p><span style='font-weight:bold'>Zipcode: </span>{zipcode}</p>" +
-			"<p><span style='font-weight:bold'>Area: </span>" + zipData.area + "</p>" +
+			"<p><span style='font-weight:bold'>Area: </span>" + (zipData.area ? zipData.area : 'No data') + "</p>" +
 			"<p><span style='font-weight:bold'>Day of the week: </span>" + zipData.dayOfWeek + "</p>" +
 			"<p><span style='font-weight:bold'>Hour: </span>" + zipData.hour + "</p>" +
-			"<p><span style='font-weight:bold'>Regression: </span>" + zipData.regression + "</p>" +
-			"<p><span style='font-weight:bold'>XGB: </span>" + zipData.xgb + "</p>" +
+			"<p><span style='font-weight:bold'>Regression: </span>" + (zipData.regression ? zipData.regression : 'No data') + "</p>" +
+			"<p><span style='font-weight:bold'>XGB: </span>" + (zipData.xgb ? zipData.xgb : 'No data') + "</p>" +
 			"</div>";
 
 		return htmlTemplate.replace("{zipcode}", zipcode);
